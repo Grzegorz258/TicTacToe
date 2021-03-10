@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="MainWindow" Height="500" Width="800">
     <Window.Resources>
         <ResourceDictionary>
@@ -16,17 +17,26 @@
     
     
     <Grid>
-        <Button x:Name="Field1" Style="{StaticResource gameFieldStyle}" Margin="71,75,621,294" />
-        <Button x:Name="Field2" Style="{StaticResource gameFieldStyle}" Margin="176,75,516,294" />
-        <Button x:Name="Field3" Style="{StaticResource gameFieldStyle}" Margin="281,75,411,294" />
-        <Button x:Name="Field4" Style="{StaticResource gameFieldStyle}" Margin="71,180,621,189" />
-        <Button x:Name="Field5" Style="{StaticResource gameFieldStyle}" Margin="176,180,516,189" />
-        <Button x:Name="Field6" Style="{StaticResource gameFieldStyle}" Margin="281,181,411,188" />
-        <Button x:Name="Field7" Style="{StaticResource gameFieldStyle}" Margin="71,285,621,84" />
-        <Button x:Name="Field8" Style="{StaticResource gameFieldStyle}" Margin="176,285,516,84" />
-        <Button x:Name="Field9" Style="{StaticResource gameFieldStyle}" Margin="281,285,411,84" />
+        <Button x:Name="Field1" Style="{StaticResource gameFieldStyle}" Margin="71,75,621,294"
+                Click="field_Click" />
+        <Button x:Name="Field2" Style="{StaticResource gameFieldStyle}" Margin="176,75,516,294" 
+                Click="field_Click" />
+        <Button x:Name="Field3" Style="{StaticResource gameFieldStyle}" Margin="281,75,411,294" 
+                Click="field_Click" />
+        <Button x:Name="Field4" Style="{StaticResource gameFieldStyle}" Margin="71,180,621,189" 
+                Click="field_Click" />
+        <Button x:Name="Field5" Style="{StaticResource gameFieldStyle}" Margin="176,180,516,189"
+                Click="field_Click" />
+        <Button x:Name="Field6" Style="{StaticResource gameFieldStyle}" Margin="281,181,411,188"
+                Click="field_Click" />
+        <Button x:Name="Field7" Style="{StaticResource gameFieldStyle}" Margin="71,285,621,84"  
+                Click="field_Click" />
+        <Button x:Name="Field8" Style="{StaticResource gameFieldStyle}" Margin="176,285,516,84" 
+                Click="field_Click" />
+        <Button x:Name="Field9" Style="{StaticResource gameFieldStyle}" Margin="281,285,411,84" 
+                Click="field_Click" />
 
-        <Button Width="150" Height="50" Margin="518,75,124,344" FontSize="30" 
+        <Button x:Name="newGameButton" Click="Window_Loaded" Width="150" Height="50" Margin="518,75,124,344" FontSize="30" 
                 Content="New Game" />
     </Grid>
 </Window>
