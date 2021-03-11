@@ -20,7 +20,7 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static bool turn = true;
+        private static bool turn;
         private static int roundsCounter = 0;
 
         private const string O_SYMBOL = "O";
@@ -30,7 +30,7 @@ namespace TicTacToe
         public MainWindow()
         {
             InitializeComponent();
-
+            
             gameFields = new List<Button>() { Field1, Field2, Field3, Field4, Field5, Field6, Field7, Field8, Field9 };
             foreach (Button x in gameFields) { x.Content = ""; };
 
@@ -97,6 +97,18 @@ namespace TicTacToe
                 button.Foreground = new SolidColorBrush(Colors.Black);
             }
             roundsCounter = 0;
+            if (getRandomNumber() == 1)
+            {
+                turn = true;
+                whoseTurnLabel.Content = X_SYMBOL;
+                whoseTurnLabel.Foreground = new SolidColorBrush(Colors.Red);
+            }
+            else
+            {
+                turn = false;
+                whoseTurnLabel.Content = O_SYMBOL;
+                whoseTurnLabel.Foreground = new SolidColorBrush(Colors.Blue);
+            }
         }
         private void Window_Loaded()
         {
@@ -107,6 +119,24 @@ namespace TicTacToe
                 button.Foreground = new SolidColorBrush(Colors.Black);
             }
             roundsCounter = 0;
+            if (getRandomNumber() == 1)
+            {
+                turn = true;
+                whoseTurnLabel.Content = X_SYMBOL;
+                whoseTurnLabel.Foreground = new SolidColorBrush(Colors.Red);
+            }
+            else
+            {
+                turn = false;
+                whoseTurnLabel.Content = O_SYMBOL;
+                whoseTurnLabel.Foreground = new SolidColorBrush(Colors.Blue);
+            }
+        }
+
+        private static int getRandomNumber()
+        {
+            Random rand = new Random();
+            return rand.Next(2);
         }
     }
 }

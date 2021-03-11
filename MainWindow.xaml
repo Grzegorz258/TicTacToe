@@ -14,8 +14,8 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    
-    
+
+
     <Grid>
         <Button x:Name="Field1" Style="{StaticResource gameFieldStyle}" Margin="71,75,621,294"
                 Click="field_Click" />
@@ -38,5 +38,10 @@
 
         <Button x:Name="newGameButton" Click="Window_Loaded" Width="150" Height="50" Margin="518,75,124,344" FontSize="30" 
                 Content="New Game" />
+
+        <Label Content="Player's turn: " FontSize="30" Height="50" Margin="472,130,140,289"/>
+        <Label x:Name="whoseTurnLabel" Content="X" FontSize="30" Width="30" Height="50" Margin="657,130,105,289"
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
     </Grid>
 </Window>
