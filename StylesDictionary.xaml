@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:TicTacToe">
 
+
     <Style x:Key="gameFieldStyle" TargetType="Button">
         <Setter Property="Width" Value="100" />
         <Setter Property="Height" Value="100" />
@@ -24,6 +25,33 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#72f542" />
+                <Setter Property="BorderThickness" Value="3" />
+            </Trigger>
+        </Style.Triggers>
+        
+    </Style>
+
+    <Style x:Key="otherButton" TargetType="Button">
+        <Setter Property="Background" Value="#eb4334" />
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="1" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="10" BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" >
+                        <Grid>
+                            <ContentPresenter x:Name="Content" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="BorderThickness" Value="3" />
             </Trigger>
         </Style.Triggers>
