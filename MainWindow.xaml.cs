@@ -22,7 +22,7 @@ namespace TicTacToe
     {
         private static bool turn;
         private static int roundsCounter = 0;
-
+        private const int minimalAmountOfRounds = 5;//Minimum number of moves for a win
         private const string O_SYMBOL = "O";
         private const string X_SYMBOL = "X";
 
@@ -42,18 +42,23 @@ namespace TicTacToe
             {
                 pressedButton.Content = X_SYMBOL;
                 pressedButton.Foreground = new SolidColorBrush(Colors.Red);
+                whoseTurnLabel.Content = O_SYMBOL;
+                whoseTurnLabel.Foreground = new SolidColorBrush(Colors.Blue);
+
             }
             else
             {
                 pressedButton.Content = O_SYMBOL;
                 pressedButton.Foreground = new SolidColorBrush(Colors.Blue);
+                whoseTurnLabel.Content = X_SYMBOL;
+                whoseTurnLabel.Foreground = new SolidColorBrush(Colors.Red);
             }
 
             turn = !turn;
             roundsCounter++;
             pressedButton.IsEnabled = false;
 
-            if (roundsCounter >= 5)
+            if (roundsCounter >= minimalAmountOfRounds)
             {
                 if (roundsCounter == 9 && !checkFields())
                 {
@@ -138,5 +143,6 @@ namespace TicTacToe
             Random rand = new Random();
             return rand.Next(2);
         }
+
     }
 }
