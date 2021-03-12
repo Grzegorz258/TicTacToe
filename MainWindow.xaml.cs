@@ -20,14 +20,19 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region VariableData
         private static bool turn;
         private static int roundsCounter = 0;
-        private const int minimalAmountOfRounds = 5;//Minimum number of moves for a win
-        private const string O_SYMBOL = "O";
-        private const string X_SYMBOL = "X";
         private static int X_wins = 0;
         private static int O_wins = 0;
         private static int TiesNumber = 0;
+        #endregion
+
+        #region ConstansData
+        private const int minimalAmountOfRounds = 5;//Minimum number of moves for a win
+        private const string O_SYMBOL = "O";
+        private const string X_SYMBOL = "X";
+        #endregion
 
         private List<Button> gameFields;
         public MainWindow()
@@ -38,6 +43,8 @@ namespace TicTacToe
             foreach (Button x in gameFields) { x.Content = ""; };
 
         }
+
+        #region FunctionsToField
         private void field_Click(object sender, RoutedEventArgs e)
         {
             Button pressedButton = (Button)sender;
@@ -94,7 +101,9 @@ namespace TicTacToe
 
             return false;
         }
+        #endregion
 
+        #region WindowLoadedFunctions
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             foreach (var button in gameFields)
@@ -139,13 +148,9 @@ namespace TicTacToe
                 whoseTurnLabel.Foreground = new SolidColorBrush(Colors.Blue);
             }
         }
+        #endregion
 
-        private static int getRandomNumber()
-        {
-            Random rand = new Random();
-            return rand.Next(2);
-        }
-
+        #region PointsFunctions
         private void addXWins()
         {
             X_wins++;
@@ -161,7 +166,14 @@ namespace TicTacToe
             TiesNumber++;
             Ties.PointsContent = TiesNumber.ToString();
         }
+        #endregion
 
+        #region OtherFunctions
+        private static int getRandomNumber()
+        {
+            Random rand = new Random();
+            return rand.Next(2);
+        }
         private void resetPointsButton_Click(object sender, RoutedEventArgs e)
         {
             O_wins = 0; X_wins = 0; TiesNumber = 0;
@@ -169,5 +181,6 @@ namespace TicTacToe
             OWins.PointsContent = O_wins.ToString();
             Ties.PointsContent = TiesNumber.ToString();
         }
+        #endregion
     }
 }
