@@ -17,3 +17,4 @@ C:\Users\qwert\OneDrive\Pulpit\Programowanie\GIT\TicTacToe\obj\Debug\StylesDicti
 C:\Users\qwert\OneDrive\Pulpit\Programowanie\GIT\TicTacToe\obj\Debug\ResultsWindow.g.cs
 C:\Users\qwert\OneDrive\Pulpit\Programowanie\GIT\TicTacToe\obj\Debug\ResultsWindow.baml
 C:\Users\qwert\OneDrive\Pulpit\Programowanie\GIT\TicTacToe\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\qwert\OneDrive\Pulpit\Programowanie\GIT\TicTacToe\obj\Debug\TicTacToe_Content.g.cs

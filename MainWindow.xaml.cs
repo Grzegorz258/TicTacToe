@@ -25,6 +25,9 @@ namespace TicTacToe
         private const int minimalAmountOfRounds = 5;//Minimum number of moves for a win
         private const string O_SYMBOL = "O";
         private const string X_SYMBOL = "X";
+        private static int X_wins = 0;
+        private static int O_wins = 0;
+        private static int TiesNumber = 0;
 
         private List<Button> gameFields;
         public MainWindow()
@@ -62,14 +65,13 @@ namespace TicTacToe
             {
                 if (roundsCounter == 9 && !checkFields())
                 {
-                    MessageBox.Show("The game ended with tie");
+                    MessageBox.Show("The game ended with tie");addTies();
                     Window_Loaded();
                 }
                 else if (checkFields())
                 {
-                    if (turn) MessageBox.Show("Winner is O");
-                    else MessageBox.Show("Winner is X");
-
+                    if (turn) { MessageBox.Show("Winner is O"); addOWins(); }
+                    else { MessageBox.Show("Winner is X"); addXWins(); }
                     Window_Loaded();
                 }
             }
@@ -143,6 +145,23 @@ namespace TicTacToe
             Random rand = new Random();
             return rand.Next(2);
         }
+
+        private void addXWins()
+        {
+            X_wins++;
+            XWins.PointsContent = X_wins.ToString();
+        }
+        private void addOWins()
+        {
+            O_wins++;
+            OWins.PointsContent = O_wins.ToString();
+        }
+        private void addTies()
+        {
+            TiesNumber++;
+            Ties.PointsContent = TiesNumber.ToString();
+        }
+
 
     }
 }
