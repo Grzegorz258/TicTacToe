@@ -162,6 +162,12 @@ namespace TicTacToe
             Ties.PointsContent = TiesNumber.ToString();
         }
 
-
+        private void resetPointsButton_Click(object sender, RoutedEventArgs e)
+        {
+            O_wins = 0; X_wins = 0; TiesNumber = 0;
+            XWins.PointsContent = X_wins.ToString();
+            OWins.PointsContent = O_wins.ToString();
+            Ties.PointsContent = TiesNumber.ToString();
+        }
     }
 }

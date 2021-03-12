@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         Title="MainWindow" Height="500" Width="800">
-    
+
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -17,7 +17,7 @@
     </Window.Resources>
 
 
-    <Grid>
+    <Canvas>
         <Button x:Name="Field1" Style="{StaticResource gameFieldStyle}" Margin="71,75,621,294"
                 Click="field_Click" />
         <Button x:Name="Field2" Style="{StaticResource gameFieldStyle}" Margin="176,75,516,294" 
@@ -43,13 +43,17 @@
         <Label Content="Player's turn: " FontSize="30" Height="50" Margin="460,130,152,289"/>
         <Label x:Name="whoseTurnLabel" Content="X" FontSize="30" Height="50" Margin="645,130,112,289"
                HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        
+
         <local:ResultsWindow x:Name="XWins" Margin="413,285,279,84"
                              WhosePointsContent="X wins" PointsContent="0" />
         <local:ResultsWindow x:Name="OWins" Margin="518,285,174,84"
                              WhosePointsContent="O wins" PointsContent="0" />
         <local:ResultsWindow x:Name="Ties" Margin="623,285,69,84"
-                             WhosePointsContent="Ties" PointsContent="0"/>
+                             WhosePointsContent="Ties" PointsContent="0" />
+        <Button x:Name="resetPointsButton" Content="Reset points" FontSize="30" 
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Top"
+                Height="40" Width="213" 
+                Canvas.Left="460" Canvas.Top="390" Click="resetPointsButton_Click" />
 
-    </Grid>
+    </Canvas>
 </Window>
