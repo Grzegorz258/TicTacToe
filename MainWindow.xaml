@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Loaded="Window_Loaded"
         Title="MainWindow" Height="500" Width="800">
 
@@ -17,7 +18,7 @@
     </Window.Resources>
 
 
-    <Canvas>
+    <Canvas x:Name="Container">
         <Button x:Name="Field1" Style="{StaticResource gameFieldStyle}" Margin="71,75,621,294"
                 Click="field_Click" />
         <Button x:Name="Field2" Style="{StaticResource gameFieldStyle}" Margin="176,75,516,294" 
@@ -39,11 +40,11 @@
 
         <Button x:Name="newGameButton" Style="{StaticResource otherButton}" Click="Window_Loaded"
                 Width="150" Height="50" Content="New Game" 
-                Canvas.Left="497" Canvas.Top="75" />
+                Canvas.Left="148" Canvas.Top="403" />
 
-        <Label Content="Player's turn: " FontSize="30" Height="50" Margin="460,130,152,289"/>
-        <Label x:Name="whoseTurnLabel" Content="X" FontSize="30" Height="50" Margin="645,130,112,289"
-               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Content="Player's turn: " FontSize="30" Height="50" Canvas.Left="460" Canvas.Top="75"/>
+        <Label x:Name="whoseTurnLabel" Content="X" FontSize="30" Height="50"
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="645" Canvas.Top="75" />
 
         <local:ResultsWindow x:Name="XWins" Margin="413,285,279,84"
                              WhosePointsContent="X wins" PointsContent="0" />

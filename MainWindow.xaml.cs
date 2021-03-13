@@ -40,8 +40,7 @@ namespace TicTacToe
             InitializeComponent();
             
             gameFields = new List<Button>() { Field1, Field2, Field3, Field4, Field5, Field6, Field7, Field8, Field9 };
-            foreach (Button x in gameFields) { x.Content = ""; };
-
+            foreach (Button x in gameFields) { x.Content = ""; }
         }
 
         #region FunctionsToField
